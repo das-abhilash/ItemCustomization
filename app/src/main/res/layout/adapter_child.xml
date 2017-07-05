@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="position"
+            type="java.lang.Integer"/>
+
+        <variable
+            name="childPosition"
+            type="java.lang.Integer"/>
+
+        <variable
+            name="adapter"
+            type="in.zollet.abhilashdas.itemcustomization.view.adapter.BaseRecyclerAdapter"/>
+
+        <variable
+            name="item"
+            type="in.zollet.abhilashdas.itemcustomization.model.Variation"/>
+
+        <variable
+            name="model"
+            type="in.zollet.abhilashdas.itemcustomization.viewmodel.implementation.ItemViewModel"/>
+
+        <variable
+            name="isExpanded"
+            type="java.lang.Boolean"/>
+
+
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> model.itemClickde(position,item)}">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:background="@color/red"
+            android:background="@{model.isSelected(model.toggle,item) ?  @color/red : model.isEnabled(model.toggle,item) ? @color/white : @color/deactivatedGrey}">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{item.name}"
+                tools:text="Crrust"
+                android:gravity="center"
+                android:textColor="@color/colorPrimary"
+                style="@style/Base.TextAppearance.AppCompat.Subhead"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{item.price}"
+                tools:text="Crrust"
+                android:gravity="center"
+                android:textColor="@color/colorPrimary"
+                style="@style/Base.TextAppearance.AppCompat.Subhead"
+                />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+    <!-- android:text="@{item}"-->
+
+</layout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="position"
+            type="java.lang.Integer"/>
+
+        <variable
+            name="adapter"
+            type="in.zollet.abhilashdas.itemcustomization.view.adapter.BaseRecyclerAdapter"/>
+
+        <variable
+            name="item"
+            type="in.zollet.abhilashdas.itemcustomization.model.VariantGroup"/>
+
+        <variable
+            name="model"
+            type="in.zollet.abhilashdas.itemcustomization.viewmodel.implementation.ItemViewModel"/>
+
+        <variable
+            name="isExpanded"
+            type="java.lang.Boolean"/>
+
+
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="@{item.name}"
+                tools:text="Crrust"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:textColor="@color/colorPrimary"
+                style="@style/Base.TextAppearance.AppCompat.Subhead"
+                />
+
+            <ImageView
+                android:id="@+id/ivReveal"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:rotationX="@{isExpanded? 180 : 0}"
+                android:src="@drawable/ic_red_reveallist"
+                android:tint="@color/colorPrimary"
+                />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+    <!-- android:text="@{item}"-->
+
+</layout>

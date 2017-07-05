@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ItemCustomization</string>
+    <string name="action_settings">Settings</string>
+    <string name="item_customization">Item Customization</string>
+</resources>
